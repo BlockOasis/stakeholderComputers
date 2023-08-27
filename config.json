@@ -1,0 +1,6 @@
+{
+    "privateKey": "YOUR_PRIVATE_KEY_HERE",
+    "infuraProjectId": "YOUR_INFURA_PROJECT_ID_HERE",
+    "infuraAPISecret": "YOUR_INFURA_API_SECRET_HERE",
+    "contractAddress": "<SMART_CONTRACT_ADDRESS>"
+}
