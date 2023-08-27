@@ -2,6 +2,14 @@
 
 This repository contains the entire system for the `StakeholderComputer` project, which uses blockchain and IPFS for data storage and verification.
 
+## Data Flow Diagrams
+
+To give a visual representation of the data flow in the StakeholderComputer project, refer to the following diagrams:
+
+- **Level 0 DFD:** ![Stakeholder Computer Level 0 DFD](https://github.com/BlockOasis/dataFlowDiagrams/blob/main/stakeholder-computer-level-0.svg)
+
+- **Level 1 DFD:** ![Stakeholder Computer Level 1 DFD](https://github.com/BlockOasis/dataFlowDiagrams/blob/main/stakeholder-computer-level-1.svg)
+
 ## File System Structure
 
 ```
