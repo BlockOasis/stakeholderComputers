@@ -12,7 +12,7 @@ const infuraAPISecret = config.infuraAPISecret;
 
 async function storeDataToContract(ipfsCID, timestamp) {
   try {
-    const provider = new ethers.InfuraProvider("goerli", infuraProjectId, infuraAPISecret);
+    const provider = new ethers.InfuraProvider("sepolia", infuraProjectId, infuraAPISecret);
     const signer = new ethers.Wallet(privateKey, provider);
     const contract = new ethers.Contract(contractAddress, abi, signer);
     const tx = await contract.storeData(ipfsCID, timestamp);
@@ -25,7 +25,7 @@ async function storeDataToContract(ipfsCID, timestamp) {
 
 async function getDataByTimestampFromContract(timestamp) {
   try {
-    const provider = new ethers.InfuraProvider("goerli", infuraProjectId);
+    const provider = new ethers.InfuraProvider("sepolia", infuraProjectId);
     const contract = new ethers.Contract(contractAddress, abi, provider);
     const data = await contract.getDataByTimestamp(timestamp);
     console.log('Data:', data);
@@ -36,7 +36,7 @@ async function getDataByTimestampFromContract(timestamp) {
 
 async function getTimestampByCIDFromContract(ipfsCID) {
   try {
-    const provider = new ethers.InfuraProvider("goerli", infuraProjectId);
+    const provider = new ethers.InfuraProvider("sepolia", infuraProjectId);
     const contract = new ethers.Contract(contractAddress, abi, provider);
     const timestamp = await contract.getTimestampByCID(ipfsCID);
     console.log('Timestamp by CID:', timestamp);
@@ -46,7 +46,7 @@ async function getTimestampByCIDFromContract(ipfsCID) {
 }
 async function pauseContract() {
   try {
-    const provider = new ethers.InfuraProvider("goerli", infuraProjectId, infuraAPISecret);
+    const provider = new ethers.InfuraProvider("sepolia", infuraProjectId, infuraAPISecret);
     const signer = new ethers.Wallet(privateKey, provider);
     const contract = new ethers.Contract(contractAddress, abi, signer);
     const tx = await contract.pause();
@@ -59,7 +59,7 @@ async function pauseContract() {
 
 async function unpauseContract() {
   try {
-    const provider = new ethers.InfuraProvider("goerli", infuraProjectId, infuraAPISecret);
+    const provider = new ethers.InfuraProvider("sepolia", infuraProjectId, infuraAPISecret);
     const signer = new ethers.Wallet(privateKey, provider);
     const contract = new ethers.Contract(contractAddress, abi, signer);
     const tx = await contract.unpause();
@@ -72,7 +72,7 @@ async function unpauseContract() {
 
 async function allowAddressOnContract(_address) {
   try {
-    const provider = new ethers.InfuraProvider("goerli", infuraProjectId, infuraAPISecret);
+    const provider = new ethers.InfuraProvider("sepolia", infuraProjectId, infuraAPISecret);
     const signer = new ethers.Wallet(privateKey, provider);
     const contract = new ethers.Contract(contractAddress, abi, signer);
     const tx = await contract.allowAddress(_address);
@@ -85,7 +85,7 @@ async function allowAddressOnContract(_address) {
 
 async function disallowAddressOnContract(_address) {
   try {
-    const provider = new ethers.InfuraProvider("goerli", infuraProjectId, infuraAPISecret);
+    const provider = new ethers.InfuraProvider("sepolia", infuraProjectId, infuraAPISecret);
     const signer = new ethers.Wallet(privateKey, provider);
     const contract = new ethers.Contract(contractAddress, abi, signer);
     const tx = await contract.disallowAddress(_address);
@@ -98,7 +98,7 @@ async function disallowAddressOnContract(_address) {
 
 async function getTimestampFromBlockchain() {
     try {
-        const provider = new ethers.InfuraProvider("goerli", infuraProjectId);
+        const provider = new ethers.InfuraProvider("sepolia", infuraProjectId);
         const contract = new ethers.Contract(contractAddress, abi, provider);
 
         // Listen for DataEvent to get timestamp
@@ -113,7 +113,7 @@ async function getTimestampFromBlockchain() {
 }
 
 async function getContract() {
-    const provider = new ethers.InfuraProvider("goerli", infuraProjectId);
+    const provider = new ethers.InfuraProvider("sepolia", infuraProjectId);
     const contract = new ethers.Contract(contractAddress, abi, provider);
     return contract;
 }
